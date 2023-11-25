@@ -52,6 +52,10 @@ function newQuote()
 async function getQuotes() 
 {
 	loading();
+	// With free APIs we might run into a CORS issue. Here's a way to get around it:
+	// const proxyURL = 'https://cors-anywhere.herokuapp.com/'
+	// 	const apiURL = 'https://jacintodesign.github.io/quotes-api/data/quotes.json'
+	//  [...] const response = await fetch(proxyURL + apiURL);
 	const apiURL = 'https://jacintodesign.github.io/quotes-api/data/quotes.json'
 	try {
 		const response = await fetch(apiURL);
